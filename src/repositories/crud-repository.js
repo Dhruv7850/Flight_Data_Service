@@ -45,7 +45,7 @@ class CrudRepository{
             throw error;
         }
     }
-    async update(data){  //data-> { col:value, .....}
+    async update(id, data){  //data-> { col:value, .....}
         try{
             const response = await this.model.update(data,{
                 where :{

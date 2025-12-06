@@ -16,11 +16,12 @@ async function createAirplane ( req, res){
                   .status(StatusCodes.CREATED)
                   .json({
                     success:true,
-                    message:`Successfully created an Airplane: ${req.modelNumber}`,
-                    data: response,
+                    message:`Successfully created an Airplane:`,
+                    data: airplane,
                     error :{}
                   })
     }catch(error){
+        console.log(error);
         return res
                 .status(StatusCodes.INTERNAL_SERVER_ERROR)
                 .json({
@@ -28,8 +29,9 @@ async function createAirplane ( req, res){
                     message:"Something went wrong while creating an Airplane",
                     error: error,
                     data:{}
-                })
+                })        
     }
+    
 }
 
 module.exports = {
