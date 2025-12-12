@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.City,{
         foreignKey: 'cityId',
       })
-      this.hasMany(models.Flights,{
+      this.hasMany(models.Flight,{
         foreignKey:'code',
         onDelete: 'CASCADE'
       })
-      this.hasMany(models.Flights,{
+      this.hasMany(models.Flight,{
         foreignKey:'code',
         onDelete: 'CASCADE'
       })
