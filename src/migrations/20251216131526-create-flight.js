@@ -10,8 +10,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       flightNumber: {
-  type: Sequelize.STRING,
-  allowNull: false,
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       airplaneId: {
         type: Sequelize.INTEGER,

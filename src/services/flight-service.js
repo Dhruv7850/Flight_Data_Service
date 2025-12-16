@@ -20,6 +20,7 @@ async function createFlight(data) {
     const flight = await flightRepository.create(data);
     return flight;
   } catch (error) {
+    console.log("❌ CREATE FLIGHT ERROR:", error);
     if (error.name == "SequelizeValidationError") {
       let explanation = [];
       error.errors.forEach((err) => {
@@ -102,6 +103,7 @@ async function getAllFlights(query) {
     );
     return flights;
   } catch (error) {
+    console.log("❌ GET ALL FLIGHTS ERROR:", error);
     console.log(error);
     throw new AppError(
       "Cannot fetch data of all the flights",
@@ -119,6 +121,7 @@ async function getFlight(flightId){
         }
         return flight;
     } catch(error) {
+      console.log("❌ GET SINGLE FLIGHT ERROR:", error);
         if(error.statusCode == StatusCodes.NOT_FOUND) {
             throw error;
         }
